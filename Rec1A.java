@@ -12,11 +12,13 @@ public class Rec1A {
     /**
      * Returns this Rec1A's name
      */
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
     /**
-     * Changes this Rec1A's name. Throws IllegalArgumentException if the
-     * argument is null or blank.
+     * Changes this Rec1A's name. Throws IllegalArgumentException if the argument is
+     * null or blank.
      */
     public void setName(String name) {
         if (name == null || name.length() == 0) {
@@ -28,8 +30,8 @@ public class Rec1A {
     }
 
     /**
-     * Creates a Rec1A object with the given name. Throws
-     * IllegalArgumentException if the name is null or blank.
+     * Creates a Rec1A object with the given name. Throws IllegalArgumentException
+     * if the name is null or blank.
      */
     public Rec1A(String name) {
         if (name == null || name.length() == 0) {
@@ -49,27 +51,23 @@ public class Rec1A {
     public static void main(String[] args) {
         // Note that count is accessed via the Rec1A class, not one of its
         // instances!
-        System.out.println("Number of Rec1A objects created at start: " +
-                Rec1A.count);
+        System.out.println("Number of Rec1A objects created at start: " + Rec1A.count);
 
         Rec1A matilda = new Rec1A("Matilda");
 
         // Again, note this is not matilda.count
-        System.out.println("Number of Rec1A objects created incl. Matilda: " +
-                Rec1A.count);
+        System.out.println("Number of Rec1A objects created incl. Matilda: " + Rec1A.count);
 
         Rec1A lakshmi = new Rec1A("Lakshmi");
         Rec1A owen = new Rec1A("Owen");
 
-        System.out.println("Number of Rec1A objects created after two more: " +
-                Rec1A.count);
+        System.out.println("Number of Rec1A objects created after two more: " + Rec1A.count);
 
         // Note here that custom is another reference to the same object as
         // matilda!
-        Rec1A custom = matilda;
+        Rec1A custom = new Rec1A("Matilda");
 
-        System.out.println("Number of Rec1A objects created incl. custom: " +
-                Rec1A.count);
+        System.out.println("Number of Rec1A objects created incl. custom: " + Rec1A.count);
 
         System.out.println();
 
@@ -87,4 +85,3 @@ public class Rec1A {
     }
 
 }
-
